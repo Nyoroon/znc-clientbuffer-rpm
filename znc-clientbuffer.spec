@@ -5,7 +5,7 @@
 
 Name:           znc-%{modname}
 Version:        0
-Release:        0.4git%{shortcommit}%{?dist}
+Release:        0.5git%{shortcommit}%{?dist}
 Summary:        ZNC module for client specific buffers
 
 License:        ASL 2.0
@@ -33,6 +33,9 @@ install -Dpm0755 %{modname}.so %{buildroot}%{_libdir}/znc/%{modname}.so
 %{_libdir}/znc/%{modname}.so
 
 %changelog
+* Fri Feb 09 2018 Fedora Release Engineering <releng@fedoraproject.org> - 0-0.5gitfe0f368
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_28_Mass_Rebuild
+
 * Thu Aug 03 2017 Fedora Release Engineering <releng@fedoraproject.org> - 0-0.4gitfe0f368
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Binutils_Mass_Rebuild
 
