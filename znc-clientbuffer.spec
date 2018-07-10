@@ -5,7 +5,7 @@
 
 Name:           znc-%{modname}
 Version:        0
-Release:        0.6git%{shortcommit}%{?dist}
+Release:        0.7git%{shortcommit}%{?dist}
 Summary:        ZNC module for client specific buffers
 
 License:        ASL 2.0
@@ -33,6 +33,9 @@ install -Dpm0755 %{modname}.so %{buildroot}%{_libdir}/znc/%{modname}.so
 %{_libdir}/znc/%{modname}.so
 
 %changelog
+* Tue Jul 10 2018 Pete Walter <pwalter@fedoraproject.org> - 0-0.7gitfe0f368
+- Rebuild for ICU 62
+
 * Fri Jun 01 2018 Jason L Tibbitts III <tibbs@math.uh.edu> - 0-0.6gitfe0f368
 - Rebuild for new znc.
 
