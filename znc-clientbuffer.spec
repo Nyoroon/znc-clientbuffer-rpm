@@ -3,9 +3,11 @@
 
 %global modname clientbuffer
 
+%global znc_version %((znc -v 2>/dev/null || echo 'a 0') | head -1 | awk '{print $2}')
+
 Name:           znc-%{modname}
 Version:        0
-Release:        0.8git%{shortcommit}%{?dist}
+Release:        0.9git%{shortcommit}%{?dist}
 Summary:        ZNC module for client specific buffers
 
 License:        ASL 2.0
@@ -14,7 +16,7 @@ Source0:        %{url}/archive/%{commit}/%{name}-%{shortcommit}.tar.gz
 
 BuildRequires:  gcc-c++
 BuildRequires:  znc-devel
-Requires:       znc%{?_isa}
+Requires:       znc%{?_isa} = %znc_version
 
 %description
 The client buffer module maintains client specific buffers for identified
@@ -33,6 +35,10 @@ install -Dpm0755 %{modname}.so %{buildroot}%{_libdir}/znc/%{modname}.so
 %{_libdir}/znc/%{modname}.so
 
 %changelog
+* Tue Jul 31 2018 Jason L Tibbitts III <tibbs@math.uh.edu> - 0-0.9gitfe0f368
+- Require specific version of znc, to avoid unexpected breakage when znc
+  updates.  (Broken deps are better than a broken server.)
+
 * Sat Jul 14 2018 Fedora Release Engineering <releng@fedoraproject.org> - 0-0.8gitfe0f368
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_29_Mass_Rebuild
 
