@@ -1,4 +1,4 @@
-%global commit 7ae14f82f74eee552d0bfdd9e6c6e96a2b31608d
+%global commit 9766a4ad5d27e815bbbc8b6842e13b7b4b5826f6
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 %global modname clientbuffer
@@ -7,7 +7,7 @@
 
 Name:           znc-%{modname}
 Version:        0
-Release:        37.1git%{shortcommit}%{?dist}
+Release:        38.1git%{shortcommit}%{?dist}
 Summary:        ZNC module for client specific buffers
 
 License:        ASL 2.0
