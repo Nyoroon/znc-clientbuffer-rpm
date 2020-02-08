@@ -12,6 +12,7 @@ URL:            https://github.com/CyberShadow/%{name}
 Source0:        %{url}/archive/v%{version}.tar.gz
 
 BuildRequires:  gcc-c++
+BuildRequires:  zlib-devel
 BuildRequires:  znc-devel
 Requires:       znc%{?_isa} = %znc_version
 
