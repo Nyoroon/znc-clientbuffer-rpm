@@ -1,18 +1,15 @@
-%global commit 9766a4ad5d27e815bbbc8b6842e13b7b4b5826f6
-%global shortcommit %(c=%{commit}; echo ${c:0:7})
-
 %global modname clientbuffer
 
 %global znc_version %((znc -v 2>/dev/null || echo 'a 0') | head -1 | awk '{print $2}')
 
 Name:           znc-%{modname}
-Version:        0
-Release:        38.1git%{shortcommit}%{?dist}
+Version:        1.0.44
+Release:        1%{?dist}
 Summary:        ZNC module for client specific buffers
 
 License:        ASL 2.0
-URL:            https://github.com/CyberShadow/znc-clientbuffer
-Source0:        %{url}/archive/%{commit}/%{name}-%{shortcommit}.tar.gz
+URL:            https://github.com/CyberShadow/%{name}
+Source0:        %{url}/archive/v%{version}.tar.gz
 
 BuildRequires:  gcc-c++
 BuildRequires:  znc-devel
@@ -23,7 +20,7 @@ The client buffer module maintains client specific buffers for identified
 clients.
 
 %prep
-%autosetup -n %{name}-%{commit}
+%autosetup
 
 %build
 CXXFLAGS="%{optflags}" LDFLAGS="%{__global_ldflags}" znc-buildmod %{modname}.cpp
