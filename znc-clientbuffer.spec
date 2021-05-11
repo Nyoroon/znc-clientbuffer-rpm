@@ -3,7 +3,7 @@
 %global znc_version %((znc -v 2>/dev/null || echo 'a 0') | head -1 | awk '{print $2}')
 
 Name:           znc-%{modname}
-Version:        1.0.44
+Version:        1.0.48
 Release:        1%{?dist}
 Summary:        ZNC module for client specific buffers
 
